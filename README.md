@@ -40,12 +40,18 @@ ausgeliefert werden.
 
 ## 🚀 Veröffentlichen über GitHub Pages
 
-1. Diesen Branch mergen bzw. den Code in den `main`-Branch bringen.
-2. Im Repository unter **Settings → Pages** als Quelle **„GitHub Actions"** wählen.
-3. Der Workflow `.github/workflows/deploy.yml` veröffentlicht die Seite
-   automatisch bei jedem Push auf `main`.
-4. Die Seite ist danach unter
-   `https://<benutzername>.github.io/<repo>/` erreichbar.
+Die Seite ist rein statisch (HTML/CSS/JS im Root, `.nojekyll` vorhanden) und wird
+am zuverlässigsten über den Branch-Modus ausgeliefert:
+
+1. Den Code in den `main`-Branch bringen (bereits geschehen).
+2. Im Repository unter **Settings → Pages**:
+   - **Source:** „Deploy from a branch"
+   - **Branch:** `main` · **Ordner:** `/ (root)` → **Save**
+3. GitHub baut die Seite automatisch (interner „pages build and deployment"-Lauf)
+   und aktualisiert sie bei jedem Push auf `main`.
+4. Die Seite ist danach erreichbar unter
+   `https://<benutzername>.github.io/<repo>/` – hier konkret
+   **https://josuadev.github.io/HFAC-Web/**.
 
 ### Eigene Domain (haut-manufaktur.com)
 
